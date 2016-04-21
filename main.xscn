@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<resource_file type="PackedScene" subresource_count="4" version="2.0" version_name="Godot Engine v2.0.stable.official">
+<resource_file type="PackedScene" subresource_count="6" version="2.0" version_name="Godot Engine v2.0.stable.official">
 	<ext_resource path="res://ball.png" type="Texture" index="0"></ext_resource>
 	<resource type="RectangleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 150, 15 </vector2>
+		<vector2 name="extents"> 210, 15 </vector2>
+
+	</resource>
+	<resource type="RectangleShape2D" path="local://3">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2 name="extents"> 3, 300 </vector2>
 
 	</resource>
 	<resource type="CircleShape2D" path="local://2">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
+
+	</resource>
+	<resource type="ConvexPolygonShape2D" path="local://4">
+		<real name="custom_solver_bias"> 0 </real>
+		<vector2_array name="points" len="6"> 			-54, -6, 45, -3, 60, 0, 45, 3, -54, 6, -60, 0 </vector2_array>
 
 	</resource>
 	<main_resource>
@@ -21,7 +31,7 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="50">
+			<string_array  len="69">
 				<string> "game" </string>
 				<string> "Node2D" </string>
 				<string> "box" </string>
@@ -30,6 +40,15 @@
 				<string> "shapes/0/shape" </string>
 				<string> "shapes/0/transform" </string>
 				<string> "shapes/0/trigger" </string>
+				<string> "shapes/1/shape" </string>
+				<string> "shapes/1/transform" </string>
+				<string> "shapes/1/trigger" </string>
+				<string> "shapes/2/shape" </string>
+				<string> "shapes/2/transform" </string>
+				<string> "shapes/2/trigger" </string>
+				<string> "shapes/3/shape" </string>
+				<string> "shapes/3/transform" </string>
+				<string> "shapes/3/trigger" </string>
 				<string> "collision/layers" </string>
 				<string> "collision/mask" </string>
 				<string> "constant_linear_velocity" </string>
@@ -43,7 +62,7 @@
 				<string> "_update_shape_index" </string>
 				<string> "__meta__" </string>
 				<string> "CollisionShape2D" </string>
-				<string> "base_view" </string>
+				<string> "view" </string>
 				<string> "polygon" </string>
 				<string> "uv" </string>
 				<string> "color" </string>
@@ -55,6 +74,9 @@
 				<string> "invert/enable" </string>
 				<string> "invert/border" </string>
 				<string> "Polygon2D" </string>
+				<string> "top" </string>
+				<string> "left" </string>
+				<string> "right" </string>
 				<string> "ball" </string>
 				<string> "mode" </string>
 				<string> "mass" </string>
@@ -72,46 +94,95 @@
 				<string> "RigidBody2D" </string>
 				<string> "Sprite" </string>
 				<string> "texture" </string>
+				<string> "pad_left" </string>
+				<string> "transform/rot" </string>
+				<string> "CollisionPolygon2D" </string>
+				<string> "build_mode" </string>
+				<string> "shape_range" </string>
+				<string> "pad_right" </string>
+				<string> "transform/scale" </string>
 			</string_array>
 			<string> "node_count" </string>
-			<int> 7 </int>
+			<int> 19 </int>
 			<string> "node_paths" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="153"> 				-1, -1, 1, 0, -1, 0, 0, 0, 0, 14, 2, -1, 11, 3, 0, 4, 1, 5, 2, 6, 3, 7, 1, 8, 4, 9, 4, 10, 5, 11, 6, 12, 7, 13, 6, 0, 1, 0, 20, 15, -1, 4, 16, 2, 17, 1, 18, 8, 19, 9, 0, 1, 0, 32, 21, -1, 10, 22, 10, 23, 11, 24, 12, 25, 5, 26, 13, 27, 5, 28, 14, 29, 6, 30, 1, 31, 15, 0, 0, 0, 47, 33, -1, 22, 3, 16, 4, 1, 5, 17, 6, 18, 7, 1, 8, 4, 9, 4, 34, 19, 35, 7, 12, 7, 13, 20, 36, 7, 37, 1, 38, 8, 39, 8, 40, 1, 41, 1, 42, 21, 43, 5, 44, 6, 45, 22, 46, 22, 0, 4, 0, 20, 20, -1, 3, 16, 17, 17, 1, 18, 8, 0, 4, 0, 48, 48, -1, 2, 49, 23, 19, 24, 0 </int_array>
+			<int_array  len="479"> 				-1, -1, 1, 0, -1, 0, 0, 0, 0, 23, 2, -1, 20, 3, 0, 4, 1, 5, 2, 6, 3, 7, 1, 8, 4, 9, 5, 10, 1, 11, 4, 12, 6, 13, 1, 14, 2, 15, 7, 16, 1, 17, 8, 18, 8, 19, 9, 20, 10, 21, 10, 22, 11, 0, 1, 0, 29, 24, -1, 5, 3, 12, 25, 2, 26, 1, 27, 13, 28, 14, 0, 2, 0, 41, 30, -1, 11, 31, 15, 32, 16, 33, 17, 34, 9, 35, 18, 36, 9, 37, 19, 38, 10, 39, 1, 40, 20, 28, 21, 0, 1, 0, 29, 42, -1, 5, 3, 22, 25, 2, 26, 1, 27, 23, 28, 14, 0, 4, 0, 41, 30, -1, 11, 31, 15, 32, 16, 33, 17, 34, 9, 35, 18, 36, 9, 37, 19, 38, 10, 39, 1, 40, 20, 28, 21, 0, 1, 0, 29, 43, -1, 5, 3, 24, 25, 4, 26, 1, 27, 8, 28, 14, 0, 6, 0, 41, 30, -1, 11, 31, 25, 32, 16, 33, 17, 34, 9, 35, 18, 36, 9, 37, 19, 38, 10, 39, 1, 40, 20, 28, 21, 0, 1, 0, 29, 44, -1, 5, 3, 26, 25, 4, 26, 1, 27, 27, 28, 14, 0, 8, 0, 41, 30, -1, 11, 31, 25, 32, 16, 33, 17, 34, 9, 35, 18, 36, 9, 37, 19, 38, 10, 39, 1, 40, 20, 28, 21, 0, 0, 0, 59, 45, -1, 22, 3, 28, 4, 1, 5, 29, 6, 30, 7, 1, 17, 8, 18, 8, 46, 27, 47, 31, 21, 10, 22, 32, 48, 32, 49, 1, 50, 13, 51, 13, 52, 1, 53, 1, 54, 33, 55, 34, 56, 10, 57, 35, 58, 35, 0, 10, 0, 29, 29, -1, 4, 25, 29, 26, 1, 27, 13, 28, 36, 0, 10, 0, 60, 60, -1, 2, 61, 37, 28, 38, 0, 0, 0, 23, 62, -1, 13, 3, 39, 63, 40, 4, 1, 5, 41, 6, 42, 7, 1, 17, 8, 18, 8, 19, 9, 20, 10, 21, 32, 22, 32, 28, 43, 0, 13, 0, 64, 64, -1, 6, 3, 44, 65, 13, 31, 45, 66, 9, 26, 1, 28, 46, 0, 14, 0, 41, 41, -1, 11, 31, 45, 32, 16, 33, 47, 34, 9, 35, 18, 36, 9, 37, 19, 38, 10, 39, 1, 40, 20, 28, 48, 0, 0, 0, 23, 67, -1, 14, 3, 49, 63, 50, 68, 51, 4, 1, 5, 41, 6, 42, 7, 1, 17, 8, 18, 8, 19, 9, 20, 10, 21, 32, 22, 32, 28, 43, 0, 16, 0, 64, 64, -1, 6, 3, 44, 65, 13, 31, 45, 66, 9, 26, 1, 28, 46, 0, 17, 0, 41, 41, -1, 11, 31, 45, 32, 16, 33, 47, 34, 9, 35, 18, 36, 9, 37, 19, 38, 10, 39, 1, 40, 20, 28, 48, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="25" shared="false">
-				<vector2> 300, 525 </vector2>
+			<array  len="52" shared="false">
+				<vector2> 300, 300 </vector2>
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
+				<matrix32> 1, -0, 0, 1, 0, 285 </matrix32>
+				<resource  resource_type="Shape2D" path="local://3">  </resource>
+				<matrix32> 1, -0, 0, 1, -210, 0 </matrix32>
+				<matrix32> 1, -0, 0, 1, 210, 0 </matrix32>
+				<matrix32> 1, -0, 0, 1, 0, -285 </matrix32>
 				<int> 1 </int>
 				<vector2> 0, 0 </vector2>
 				<real> 0 </real>
-				<real> 1 </real>
+				<real> 0.5 </real>
+				<vector2> 0, 285 </vector2>
 				<int> 0 </int>
 				<dictionary  shared="false">
 					<string> "_edit_lock_" </string>
 					<bool> True </bool>
 				</dictionary>
-				<vector2_array  len="4"> 					-150, -15, 150, -15, 150, 15, -150, 15 </vector2_array>
+				<vector2_array  len="4"> 					-210, -15, 210, -15, 210, 15, -210, 15 </vector2_array>
 				<vector2_array  len="0"> 					 </vector2_array>
 				<color> 0.375, 0.256119, 0.0878906, 1 </color>
 				<resource name=""></resource>				<vector2> 1, 1 </vector2>
 				<real> 100 </real>
+				<dictionary  shared="false">
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
+				</dictionary>
+				<vector2> 0, -285 </vector2>
+				<int> 3 </int>
+				<vector2> -210, 0 </vector2>
+				<vector2_array  len="4"> 					-6, -300, 6, -300, 6, 300, -6, 300 </vector2_array>
+				<vector2> 210, 0 </vector2>
+				<int> 2 </int>
 				<vector2> 302, 302 </vector2>
 				<resource  resource_type="Shape2D" path="local://2">  </resource>
-				<matrix32> 1, 0, 0, 1, 0, 0 </matrix32>
-				<int> 2 </int>
-				<real> 0.2 </real>
+				<matrix32> 1, -0, 0, 1, 0, 0 </matrix32>
+				<real> 10 </real>
+				<real> 1 </real>
 				<bool> True </bool>
+				<vector2> 100, -50 </vector2>
 				<real> -1 </real>
+				<dictionary  shared="false">
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
+				</dictionary>
 				<resource  external="0">  </resource>
 				<dictionary  shared="false">
 					<string> "_edit_lock_" </string>
 					<bool> True </bool>
 				</dictionary>
+				<vector2> 180, 510 </vector2>
+				<real> -30 </real>
+				<resource  resource_type="Shape2D" path="local://4">  </resource>
+				<matrix32> 1, -0, 0, 1, 54, 0 </matrix32>
+				<dictionary  shared="false">
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
+				</dictionary>
+				<vector2> 54, 0 </vector2>
+				<vector2_array  len="6"> 					-54, -6, 45, -3, 60, 0, 45, 3, -54, 6, -60, 0 </vector2_array>
+				<dictionary  shared="false">
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
+				</dictionary>
+				<color> 0.346413, 0.297852, 0.625, 1 </color>
+				<dictionary  shared="false">
+					<string> "_edit_lock_" </string>
+					<bool> True </bool>
+				</dictionary>
+				<vector2> 420, 510 </vector2>
+				<real> 30 </real>
+				<vector2> -1, 1 </vector2>
 			</array>
 			<string> "version" </string>
 			<int> 2 </int>
