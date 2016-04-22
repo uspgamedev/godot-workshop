@@ -23,3 +23,7 @@ func _fixed_process(delta):
 	var velocity = get_linear_velocity()
 	if velocity.length_squared() > MAX_SPEED*MAX_SPEED:
 		set_linear_velocity(velocity.normalized()*MAX_SPEED)
+
+func _hit(body):
+	if body extends preload("bumper.gd"):
+		get_parent().add_score(100)

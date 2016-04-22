@@ -17,9 +17,9 @@ IV. Targets
 V. Life and score
 -----------------
 
-VI. Menu and highscore
-----------------------
-
-VII. Juice
+VI. Juice
 ----------
+
+VII. Menu and highscore
+----------------------
 
