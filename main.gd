@@ -13,6 +13,7 @@ func _ready():
 	start()
 
 func start():
+	set_score(0)
 	ball.restart()
 
 func _input(event):
@@ -28,5 +29,13 @@ func _input(event):
 		pad_right.down()
 
 func add_score(amount):
-	score += amount
+	set_score(score + amount)
+
+func set_score(amount):
+	score = amount
 	score_node.set_text(var2str(score))
+
+func _on_death(body):
+	if body == ball:
+		print("You die")
+		start()

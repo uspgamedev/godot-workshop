@@ -27,3 +27,5 @@ func _fixed_process(delta):
 func _hit(body):
 	if body extends preload("bumper.gd"):
 		get_parent().add_score(100)
+	#else:
+	#	print("untracked collision with ", body.get_name())
